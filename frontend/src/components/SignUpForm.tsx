@@ -26,7 +26,7 @@ const SignUpForm = () => {
         regex = new RegExp('[1-9]');
         (regex.test(event.target.value)) ? setHasNumber(true) : setHasNumber(false);
 
-        regex = new RegExp('^[a-zA-Z0-9]');
+        regex = new RegExp('[^a-zA-Z0-9]');
         (regex.test(event.target.value)) ? setHasSpecialChar(true) : setHasSpecialChar(false);
     };
 
