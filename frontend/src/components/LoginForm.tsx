@@ -1,5 +1,11 @@
 import React, {useState} from "react";
 
+import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import TextField from "@material-ui/core/TextField";
+
+import "./LoginForm.css";
+
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,33 +25,48 @@ const LoginForm = () => {
     }
 
     return(
-        <div>
-            <form onSubmit={onSubmitHandler}>
+            <Card className="login_form_card">
+                <h1>Sign In</h1>
+                <form onSubmit={onSubmitHandler}>
+                    <div>
+                        <TextField 
+                            className="login_form_textfield"
+                            required
+                            variant="outlined" 
+                            label="Email"
+                            margin="normal"
+                            size="small"
+                            onChange={onEmailChange}
+                        />
+                        
+                    </div>
+                    <div>
+                        <TextField
+                            className="login_form_textfield"
+                            required
+                            variant="outlined"
+                            type="password"
+                            label="Password"
+                            margin="normal"
+                            size="small"
+                            onChange={onPasswordChange}
+                        />
+                    </div>
+                    <Button 
+                        variant="contained"
+                        className="login_form_button"
+                    >
+                        Sign In
+                    </Button>
+                </form>
+                <br/>
                 <div>
-                    <label>Email</label>
-                    <input 
-                        type="email" 
-                        name="email"
-                        onChange={onEmailChange}
-                    />
+                    <a href={"#"}>Forgot password?</a>
                 </div>
                 <div>
-                    <label>Password</label>
-                    <input 
-                        type="password" 
-                        name="password"
-                        onChange={onPasswordChange}
-                    />
+                    <a href={"#"}>Need an account?</a>
                 </div>
-                <div>
-                    <a href="#">Forgot password?</a>
-                </div>
-                <div>
-                    <a href="#">Need an account?</a>
-                </div>
-                <input type="submit" value="Submit"/>
-            </form>
-        </div>
+            </Card>
     );
 };
 

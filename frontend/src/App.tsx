@@ -1,11 +1,10 @@
-import SignUpForm from "./components/SignUpForm";
-import LoginForm from "./components/LoginForm";
+import NotePage from "./components/NotePage";
 import './App.css';
 
 function App() {
   return (
     <div>
-      <LoginForm/>
+      <NotePage/>
     </div>
   );
 }
