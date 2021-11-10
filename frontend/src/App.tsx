@@ -1,11 +1,12 @@
 import NotePage from "./components/NotePage";
 import './App.css';
-
+import theme from "./components/Theme";
+import {ThemeProvider} from "@material-ui/styles";
 function App() {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <NotePage/>
-    </div>
+    </ThemeProvider>
   );
 }
 
