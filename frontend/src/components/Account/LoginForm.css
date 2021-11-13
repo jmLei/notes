@@ -1,0 +1,17 @@
+.login_form_card {
+    height: 100vh;
+    width: 60vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.login_form_textfield {
+    width: 300px;
+}
+
+.login_form_button {
+    width: 300px;
+}
