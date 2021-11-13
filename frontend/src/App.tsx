@@ -1,12 +1,12 @@
-import NotePage from "./components/NotePage";
+import MainPage from "./components/MainPage";
+import NewNote from "./components/NewNote";
+
 import './App.css';
-import theme from "./components/Theme";
-import {ThemeProvider} from "@material-ui/styles";
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <NotePage/>
-    </ThemeProvider>
+    <div>
+      <MainPage/>
+    </div>
   );
 }
 
