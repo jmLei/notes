@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 import "./NewNote.css";
 
 const NewNote = () => {
-    const [bodyStyle, setBodyStyle] = useState(
-        {
-            display: "none",
-        }
-    );
+    const [titleFocused, setTitleFocused] = useState(false);
+    const [bodyFocused, setBodyFocused] = useState(false);
+
+    const bodyStyle = {
+        display: (bodyFocused || titleFocused) ? "inline" : "none"
+    }
+  
     
     const [titleStyle, setTitleStyle] = useState(
         {
@@ -16,33 +18,47 @@ const NewNote = () => {
         }
     );
 
-    const onBlurHandler = () => {
-        console.log("Text field lost focus");
+    useEffect(() => {
+        console.log("***useEffect()***");
+        console.log("bodyFocused = " + bodyFocused);
+        console.log("titleFocused = " + titleFocused);
+    });
+
+    const onBodyBlurHandler = () => {
+        setTimeout(() => {
+            setBodyFocused(false);
+        }, 100);
     };
 
-    const onFocusHandler = () => {
-        console.log("Text field has focus");
-        setBodyStyle(
-            {
-                display: "inline",
-            }
-        );
+    const onBodyFocusHandler = () => {
+        setBodyFocused(true);
+    };
+
+    const onTitleBlurHandler = () => {
+        setTimeout(() => {
+            setTitleFocused(false);
+        }, 100);
+    };
+
+    const onTitleFocusHandler = () => {
+        setTitleFocused(true);
     };
 
     return(
         <React.Fragment>
             <div 
-                className="new-note-container"
-                
+                className="new-note-container"     
             >
                     <input
-                        onBlur={onBlurHandler}
-                        onFocus={onFocusHandler}
+                        onBlur={onTitleBlurHandler}
+                        onFocus={onTitleFocusHandler}
                         style={titleStyle}
-                        
                         placeholder="Untitled"
+                        type="text"
                     />
                     <input
+                        onBlur={onBodyBlurHandler}
+                        onFocus={onBodyFocusHandler}
                         style={bodyStyle}
                         placeholder="Write a new note..."
                         type="text"
