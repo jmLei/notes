@@ -1,9 +1,18 @@
 import React from "react";
 
+import ExistingNote from "./ExistingNote";
 import NewNote from "./NewNote";
 import Header from "./Header";
 
 import "./MainPage.css";
+
+const existingNotes = [
+    { title: "Title1", body: "Body1 Body1Body1Body1Body1Body1" },
+    { title: "Title2", body: "Body2" },
+    { title: "Title3", body: "Body3" },
+    { title: "Title4", body: "Body4" },
+    { title: "Title5", body: "Body5" }
+];
 
 const MainPage = () => {
     return(
@@ -13,18 +22,7 @@ const MainPage = () => {
                 <NewNote/>
             </div>
             <div className="existing-notes-panel">
-                <div className="existing-note">1</div>
-                <div className="existing-note">2</div>
-                <div className="existing-note">3</div>
-                <div className="existing-note">4</div>
-                <div className="existing-note">5</div>
-                <div className="existing-note">6</div>
-                <div className="existing-note">7</div>
-                <div className="existing-note">8</div>
-                <div className="existing-note">9</div>
-                <div className="existing-note">10</div>
-                <div className="existing-note">11</div>
-                <div className="existing-note">12</div>
+                {existingNotes.map((note) =><ExistingNote title={note.title} body={note.body}/>)}
             </div>
         </React.Fragment>
     );
