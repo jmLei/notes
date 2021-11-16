@@ -1,0 +1,19 @@
+.existing-note {
+    border: 1px solid black;
+}
+
+.existing-notes-panel {
+    display: grid;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 50px;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.new-note-panel {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

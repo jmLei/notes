@@ -1,0 +1,4 @@
+.new-note-container {
+    display: flex;
+    flex-direction: column;
+}
