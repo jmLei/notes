@@ -1,15 +1,24 @@
-.existing-notes-panel {
-    display: grid;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-top: 50px;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+#main-page-center {
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 50vw;
 }
 
-.new-note-panel {
-    align-items: center;
+#main-page-container {
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
+}
+
+#main-page-left {
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 25vw;
+}
+
+#main-page-right {
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 25vw;
 }

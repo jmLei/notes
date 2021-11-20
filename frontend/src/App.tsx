@@ -1,5 +1,4 @@
 import MainPage from "./components/MainPage";
-import NewNote from "./components/NewNote";
 
 import './App.css';
 function App() {
